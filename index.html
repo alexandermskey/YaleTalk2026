@@ -37,15 +37,37 @@
 <body class="min-h-screen flex flex-col justify-between py-10 px-4 sm:px-6 lg:px-8">
 
   <main class="w-full max-w-xl mx-auto">
-    <!-- Minimal Academic Header -->
+    <!-- Minimal Academic Header with Top-Right QR Code -->
     <header class="mb-8 pb-6 border-b border-stone-200">
-      <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#8C1515] mb-2">
-        <span class="w-2 h-2 rounded-full bg-[#8C1515]"></span>
-        <span>Alexander Key Presentation Handout 10/29/26</span>
+      <div class="flex items-start justify-between gap-4">
+        <div class="min-w-0">
+          <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#8C1515] mb-2">
+            <span class="w-2 h-2 rounded-full bg-[#8C1515]"></span>
+            <span>Alexander Key Presentation Handout 10/29/26</span>
+          </div>
+          <h1 class="font-serif-title text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
+            Referenced Sources
+          </h1>
+          <p class="mt-2 text-xs sm:text-sm text-stone-500">
+            Scan the QR code or tap any source below to open the reference directly.
+          </p>
+        </div>
+
+        <!-- Top Right QR Code -->
+        <button type="button"
+                id="openQrModal"
+                aria-label="Enlarge QR Code"
+                class="group shrink-0 flex flex-col items-center focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-offset-2 rounded-xl">
+          <div class="p-1.5 bg-white rounded-xl border border-stone-200/90 shadow-sm group-hover:border-[#8C1515] group-hover:shadow transition-all">
+            <img src="data:image/png;base64,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"
+                 alt="QR code linking to alexandermskey.github.io presentation references"
+                 class="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-lg" />
+          </div>
+          <span class="mt-1 text-[10px] font-mono uppercase tracking-wider text-stone-400 group-hover:text-[#8C1515] transition-colors">
+            Scan / Tap
+          </span>
+        </button>
       </div>
-      <h1 class="font-serif-title text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
-        Referenced Sources
-      </h1>
     </header>
 
     <!-- Reference Links List -->
@@ -429,6 +451,33 @@
     </div>
   </main>
 
+  <!-- Enlarged QR Code Modal -->
+  <div id="qrModal"
+       class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm hidden"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Enlarged QR Code">
+    <div class="bg-white rounded-2xl p-6 max-w-xs w-full shadow-2xl border border-stone-200 text-center relative">
+      <button type="button"
+              id="closeQrModal"
+              class="absolute top-3 right-3 p-1.5 rounded-lg text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors"
+              aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="p-3 bg-white border border-stone-200 rounded-xl inline-block shadow-inner mt-2">
+        <img src="data:image/png;base64,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"
+             alt="Enlarged QR code for presentation references"
+             class="w-56 h-56 object-contain rounded-lg" />
+      </div>
+      <h3 class="mt-4 font-serif-title text-lg font-medium text-stone-900">Scan from Audience</h3>
+      <p class="mt-1 text-xs text-stone-500">
+        Point your phone camera at this QR code to load this reference page directly.
+      </p>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div id="toast"
        role="status"
@@ -507,6 +556,29 @@
             '7. Alexander Key, "Ḥaqīqah: Truth, Reality, and Accuracy" (PMLA 139.1): https://doi.org/10.1632/S0030812924000075'
           ].join('\n');
           copyText(allText, 'Copied all 7 reference links');
+        });
+      }
+
+      // QR Code Modal handling
+      var qrModal = document.getElementById('qrModal');
+      var openQrModal = document.getElementById('openQrModal');
+      var closeQrModal = document.getElementById('closeQrModal');
+
+      if (openQrModal && qrModal) {
+        openQrModal.addEventListener('click', function () {
+          qrModal.classList.remove('hidden');
+        });
+      }
+      if (closeQrModal && qrModal) {
+        closeQrModal.addEventListener('click', function () {
+          qrModal.classList.add('hidden');
+        });
+      }
+      if (qrModal) {
+        qrModal.addEventListener('click', function (e) {
+          if (e.target === qrModal) {
+            qrModal.classList.add('hidden');
+          }
         });
       }
     })();
