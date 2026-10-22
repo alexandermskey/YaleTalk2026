@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexander Key Presentation Handout — Referenced Sources</title>
+  <title>Alexander Key Lecture Slides — 10/29/26</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,8 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #FAF9F6;
       color: #1C1917;
+      margin: 0;
+      padding: 0;
       -webkit-font-smoothing: antialiased;
     }
     .font-serif-title {
@@ -32,10 +34,186 @@
     .card-link:active {
       transform: translateY(0);
     }
+    .dragging-card {
+      opacity: 0.45;
+      border-color: #8C1515 !important;
+    }
+    .photo-slide {
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000;
+      overflow: hidden;
+      user-select: none;
+      cursor: pointer;
+    }
+    .photo-slide img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      display: block;
+    }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between py-10 px-4 sm:px-6 lg:px-8">
+<body class="min-h-screen">
 
+  <!-- =====================================================================
+       SINGLE PLACE TO EDIT REFERENCES OR ORDER IN CODE:
+       Edit any title, arabicTitle, subtitle, badge, note, url, or openText
+       in the REFERENCES list below. It automatically updates the cards on
+       the page, the individual Copy buttons, and the Copy All button!
+       ===================================================================== -->
+  <script id="referencesConfig">
+    window.DEFAULT_REFERENCES = /*__REFS_START__*/[
+  {
+    "id": "ref-1",
+    "badge": "Law Review · SSRN",
+    "badgeColor": "red",
+    "note": "101 N.Y.U. L. Rev. 1046 (June 2026)",
+    "title": "Should linguistics inform textualism?",
+    "arabicTitle": "",
+    "subtitle": "New York University Law Review, Volume 101, Page 1046 · SSRN Abstract 6482359",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6482359",
+    "openText": "Open on SSRN →"
+  },
+  {
+    "id": "ref-2",
+    "badge": "Law Review · SSRN",
+    "badgeColor": "red",
+    "note": "101 N.Y.U. L. Rev. 888 (June 2026)",
+    "title": "Amending Linguistic Textualism",
+    "arabicTitle": "",
+    "subtitle": "New York University Law Review, Volume 101, Page 888 · SSRN Abstract 6495179",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6495179",
+    "openText": "Open on SSRN →"
+  },
+  {
+    "id": "ref-3",
+    "badge": "Internet Archive · Page 186",
+    "badgeColor": "amber",
+    "note": "2-Page Reader View",
+    "title": "Al-Umniyya fī Idrāk al-Niyya",
+    "arabicTitle": "الأمنية في إدراك النية",
+    "subtitle": "Shihāb al-Dīn al-Qarāfī · Opened directly to Page 186",
+    "url": "https://archive.org/details/AlUmnyaFiIdarakNya/page/186/mode/2up",
+    "openText": "Open Archive.org reader (p. 186) →"
+  },
+  {
+    "id": "ref-4",
+    "badge": "Internet Archive · Vol. 1, p. 127",
+    "badgeColor": "amber",
+    "note": "2-Page Reader View",
+    "title": "Kitāb al-Furūq (Anwār al-Burūq)",
+    "arabicTitle": "كتاب الفروق",
+    "subtitle": "Shihāb al-Dīn al-Qarāfī · Volume 1, Page 127 (Muʾassasat al-Risālah Edition)",
+    "url": "https://archive.org/details/foroq_resalah/01/page/n127/mode/2up",
+    "openText": "Open Archive.org reader (Vol. 1, p. 127) →"
+  },
+  {
+    "id": "ref-5",
+    "badge": "Internet Archive · vol.1 p.117",
+    "badgeColor": "amber",
+    "note": "2-Page Reader View",
+    "title": "Primary Text (vol.1 p.117)",
+    "arabicTitle": "",
+    "subtitle": "Internet Archive Digitized Edition · Opened directly to Page n23",
+    "url": "https://archive.org/details/20200621_20200621_2104/page/n23/mode/2up",
+    "openText": "Open Archive.org reader (vol.1 p.117) →"
+  },
+  {
+    "id": "ref-6",
+    "badge": "Internet Archive · Vol. 3, p. n171",
+    "badgeColor": "amber",
+    "note": "2-Page Reader View",
+    "title": "Kitāb al-Intiṣār ʿalā ʿUlamāʾ al-Amṣār",
+    "arabicTitle": "الانتصار على علماء الأمصار",
+    "subtitle": "Al-Muʾayyad bi-Llāh Yaḥyā b. Ḥamzah · Volume 3, Page n171",
+    "url": "https://archive.org/details/lntsr-j1/lntsr-j3/page/n171/mode/2up",
+    "openText": "Open Archive.org reader (Vol. 3, p. n171) →"
+  },
+  {
+    "id": "ref-7",
+    "badge": "Law Journal · Article 4",
+    "badgeColor": "red",
+    "note": "24 Nev. L.J. Iss. 2 (2024)",
+    "title": "Doing Things with the Language of Law and Gender",
+    "arabicTitle": "",
+    "subtitle": "Susan Etta Keller · Nevada Law Journal, Vol. 24, Iss. 2, Article 4 (Speech Act Theory)",
+    "url": "https://scholars.law.unlv.edu/nlj/vol24/iss2/4/",
+    "openText": "Open in Nevada Law Journal →"
+  },
+  {
+    "id": "ref-8",
+    "badge": "SSRN · Working Paper",
+    "badgeColor": "purple",
+    "note": "Abstract 3798659",
+    "title": "SSRN Research Paper (Abstract 3798659)",
+    "arabicTitle": "",
+    "subtitle": "Social Science Research Network · Electronic Journal",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3798659",
+    "openText": "Open Paper on SSRN →"
+  },
+  {
+    "id": "ref-9",
+    "badge": "JSTOR · Journal Article",
+    "badgeColor": "emerald",
+    "note": "JAOS 141.4 (2021)",
+    "title": "Did the Arabic Lexicographers Invent Majāz?",
+    "arabicTitle": "",
+    "subtitle": "Avigail Noy · Journal of the American Oriental Society, Vol. 141, No. 4, pp. 803–822",
+    "url": "https://www.jstor.org/stable/10.7817/jameroriesoci.141.4.0803",
+    "openText": "Open in JSTOR →"
+  },
+  {
+    "id": "ref-10",
+    "badge": "Brill · Academic Chapter",
+    "badgeColor": "blue",
+    "note": "DOI: 10.1163/9789047400851_011",
+    "title": "Chapter 11 (Brill Publication)",
+    "arabicTitle": "",
+    "subtitle": "Published by Koninklijke Brill NV · DOI Resolution",
+    "url": "https://doi.org/10.1163/9789047400851_011",
+    "openText": "Resolve DOI via Brill →"
+  },
+  {
+    "id": "ref-11",
+    "badge": "SSRN · Working Paper",
+    "badgeColor": "purple",
+    "note": "Abstract 7244519",
+    "title": "SSRN Research Paper (Abstract 7244519)",
+    "arabicTitle": "",
+    "subtitle": "Social Science Research Network · Electronic Journal",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7244519",
+    "openText": "Open Paper on SSRN →"
+  },
+  {
+    "id": "ref-12",
+    "badge": "PMLA · Journal Article",
+    "badgeColor": "rose",
+    "note": "Vol. 139, No. 1 (2024)",
+    "title": "Ḥaqīqah: Truth, Reality, and Accuracy",
+    "arabicTitle": "حقيقة",
+    "subtitle": "Alexander Key · PMLA (Modern Language Association / Cambridge Core)",
+    "url": "https://doi.org/10.1632/S0030812924000075",
+    "openText": "Open in PMLA / Cambridge Core →"
+  }
+]/*__REFS_END__*/;
+  </script>
+
+  <!-- SLIDE 1: Pure Full-Screen Photo A (PXL_20261008_083923259.jpg) -->
+  <div id="slide1" class="photo-slide flex items-center justify-center">
+    <img id="imgSlide1"
+         src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Crect width='1200' height='900' fill='%230c0a09'/%3E%3Ctext x='50%25' y='47%25' dominant-baseline='middle' text-anchor='middle' fill='%23a8a29e' font-family='Georgia, serif' font-size='28'%3ESlide 1: PXL_20261008_083923259.jpg%3C/text%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' fill='%2357534e' font-family='sans-serif' font-size='16'%3EUpload PXL_20261008_083923259.jpg to the same GitHub folder (Press %E2%86%92 or click to advance)%3C/text%3E%3C/svg%3E"
+         alt="Slide 1" />
+  </div>
+
+  <!-- SLIDE 2: Pure Full-Screen Photo B (PXL_20261008_083100602.jpg) -->
+  <div id="slide2" class="photo-slide hidden items-center justify-center">
+    <img id="imgSlide2"
+         src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Crect width='1200' height='900' fill='%230c0a09'/%3E%3Ctext x='50%25' y='47%25' dominant-baseline='middle' text-anchor='middle' fill='%23a8a29e' font-family='Georgia, serif' font-size='28'%3ESlide 2: PXL_20261008_083100602.jpg%3C/text%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' fill='%2357534e' font-family='sans-serif' font-size='16'%3EUpload PXL_20261008_083100602.jpg to the same GitHub folder (Press %E2%86%92 or click to advance)%3C/text%3E%3C/svg%3E"
+         alt="Slide 2" />
+  </div>
+  <!-- SLIDE 3: Referenced Sources Page -->
+  <div id="slide3" class="hidden min-h-screen flex-col justify-between py-10 px-4 sm:px-6 lg:px-8">
   <main class="w-full max-w-xl mx-auto">
     <!-- Minimal Academic Header with Top-Right QR Code -->
     <header class="mb-8 pb-6 border-b border-stone-200">
@@ -48,7 +226,9 @@
           <h1 class="font-serif-title text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
             Referenced Sources
           </h1>
-       
+          <p class="mt-2 text-xs sm:text-sm text-stone-500">
+            Scan the QR code or tap any source below to open the reference directly.
+          </p>
         </div>
 
         <!-- Top Right QR Code -->
@@ -61,35 +241,71 @@
                  alt="QR code linking to alexandermskey.github.io presentation references"
                  class="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-lg" />
           </div>
+          <span class="mt-1 text-[10px] font-mono uppercase tracking-wider text-stone-400 group-hover:text-[#8C1515] transition-colors">
+            Scan / Tap
+          </span>
         </button>
       </div>
     </header>
 
+    <!-- Visual Reorder & Edit Toolbar (Hidden by default; shown when Reorder/Edit Mode is toggled) -->
+    <div id="reorderBanner" class="hidden mb-6 p-4 rounded-xl bg-amber-50/90 border border-amber-200 shadow-sm space-y-3">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-[#8C1515]">
+            Reorder &amp; Edit References Mode
+          </h2>
+          <p class="text-xs text-stone-600 mt-0.5">
+            Use the <strong>↑ / ↓</strong> buttons (or drag cards) to reorder, or edit any title/subtitle inline. Then click <strong>Copy Updated HTML for GitHub</strong> to paste into your GitHub repo so every visitor sees your new order.
+          </p>
+        </div>
+        <button type="button"
+                id="doneReorderBtn"
+                class="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium bg-white border border-stone-300 text-stone-700 hover:bg-stone-100 transition-colors">
+          Done
+        </button>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 pt-1">
+        <button type="button"
+                id="copyUpdatedHtmlBtn"
+                class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-[#8C1515] text-white hover:bg-red-900 transition-colors shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>Copy Updated HTML for GitHub</span>
+        </button>
+        <button type="button"
+                id="resetOrderBtn"
+                class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors">
+          <span>Reset to Default</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Reference Links List -->
-    <section aria-label="Reference Links" class="space-y-4">
-
-      <!-- Reference 1: NYU Law Review 1046 -->
+    <section id="referenceList" aria-label="Reference Links" class="space-y-4">
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
-        <a href="https://nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-1046.pdf"
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6482359"
            target="_blank"
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-red-50 text-[#8C1515] border border-red-100">
-                  PDF · Law Review
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-red-50 text-[#8C1515] border-red-100">
+                  Law Review · SSRN
                 </span>
-                <span class="text-xs text-stone-500 font-medium">June 2026</span>
+                <span class="text-xs text-stone-500 font-medium">101 N.Y.U. L. Rev. 1046 (June 2026)</span>
               </div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">
-                101 N.Y.U. L. Rev. 1046
+                Should linguistics inform textualism?
               </h2>
               <p class="text-sm text-stone-600">
-                <em>New York University Law Review</em>, Volume 101, Page 1046
+                New York University Law Review, Volume 101, Page 1046 · SSRN Abstract 6482359
               </p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">
-                nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-1046.pdf
+                papers.ssrn.com/sol3/papers.cfm?abstract_id=6482359
               </p>
             </div>
             <span class="shrink-0 mt-1 p-2 rounded-lg bg-stone-50 text-stone-600 group-hover:text-[#8C1515]" aria-hidden="true">
@@ -100,15 +316,15 @@
           </div>
         </a>
         <div class="px-5 py-2.5 bg-stone-50/70 border-t border-stone-100 flex items-center justify-between">
-          <a href="https://nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-1046.pdf"
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6482359"
              target="_blank"
              rel="noopener noreferrer"
              class="text-xs font-medium text-[#8C1515] hover:underline">
-            Open PDF in new tab →
+            Open on SSRN →
           </a>
           <button type="button"
-                  data-copy-url="https://nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-1046.pdf"
-                  data-copy-label="101 N.Y.U. L. Rev. 1046 link"
+                  data-copy-url="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6482359"
+                  data-copy-label="Should linguistics inform textualism?"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -119,28 +335,27 @@
         </div>
       </div>
 
-      <!-- Reference 2: NYU Law Review 888 -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
-        <a href="https://nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-888.pdf"
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6495179"
            target="_blank"
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-red-50 text-[#8C1515] border border-red-100">
-                  PDF · Law Review
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-red-50 text-[#8C1515] border-red-100">
+                  Law Review · SSRN
                 </span>
-                <span class="text-xs text-stone-500 font-medium">June 2026</span>
+                <span class="text-xs text-stone-500 font-medium">101 N.Y.U. L. Rev. 888 (June 2026)</span>
               </div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">
-                101 N.Y.U. L. Rev. 888
+                Amending Linguistic Textualism
               </h2>
               <p class="text-sm text-stone-600">
-                <em>New York University Law Review</em>, Volume 101, Page 888
+                New York University Law Review, Volume 101, Page 888 · SSRN Abstract 6495179
               </p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">
-                nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-888.pdf
+                papers.ssrn.com/sol3/papers.cfm?abstract_id=6495179
               </p>
             </div>
             <span class="shrink-0 mt-1 p-2 rounded-lg bg-stone-50 text-stone-600 group-hover:text-[#8C1515]" aria-hidden="true">
@@ -151,15 +366,15 @@
           </div>
         </a>
         <div class="px-5 py-2.5 bg-stone-50/70 border-t border-stone-100 flex items-center justify-between">
-          <a href="https://nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-888.pdf"
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6495179"
              target="_blank"
              rel="noopener noreferrer"
              class="text-xs font-medium text-[#8C1515] hover:underline">
-            Open PDF in new tab →
+            Open on SSRN →
           </a>
           <button type="button"
-                  data-copy-url="https://nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-888.pdf"
-                  data-copy-label="101 N.Y.U. L. Rev. 888 link"
+                  data-copy-url="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6495179"
+                  data-copy-label="Amending Linguistic Textualism"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -170,7 +385,6 @@
         </div>
       </div>
 
-      <!-- Reference 3: Al-Qarafi - Al-Umniyya (Internet Archive) -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://archive.org/details/AlUmnyaFiIdarakNya/page/186/mode/2up"
            target="_blank"
@@ -179,7 +393,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-900 border border-amber-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">
                   Internet Archive · Page 186
                 </span>
                 <span class="text-xs text-stone-500 font-medium">2-Page Reader View</span>
@@ -211,7 +425,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://archive.org/details/AlUmnyaFiIdarakNya/page/186/mode/2up"
-                  data-copy-label="Al-Umniyya (p. 186) link"
+                  data-copy-label="Al-Umniyya fī Idrāk al-Niyya"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -222,7 +436,6 @@
         </div>
       </div>
 
-      <!-- Reference 4: Al-Qarafi - Kitab al-Furuq (Internet Archive) -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://archive.org/details/foroq_resalah/01/page/n127/mode/2up"
            target="_blank"
@@ -231,7 +444,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-900 border border-amber-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">
                   Internet Archive · Vol. 1, p. 127
                 </span>
                 <span class="text-xs text-stone-500 font-medium">2-Page Reader View</span>
@@ -263,7 +476,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://archive.org/details/foroq_resalah/01/page/n127/mode/2up"
-                  data-copy-label="Kitāb al-Furūq (Vol. 1, p. 127) link"
+                  data-copy-label="Kitāb al-Furūq (Anwār al-Burūq)"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -274,7 +487,6 @@
         </div>
       </div>
 
-      <!-- Reference 5: Archive.org vol.1 p.117 -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://archive.org/details/20200621_20200621_2104/page/n23/mode/2up"
            target="_blank"
@@ -283,7 +495,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-900 border border-amber-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">
                   Internet Archive · vol.1 p.117
                 </span>
                 <span class="text-xs text-stone-500 font-medium">2-Page Reader View</span>
@@ -314,7 +526,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://archive.org/details/20200621_20200621_2104/page/n23/mode/2up"
-                  data-copy-label="vol.1 p.117 link"
+                  data-copy-label="Primary Text (vol.1 p.117)"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -325,7 +537,6 @@
         </div>
       </div>
 
-      <!-- Reference 6: Archive.org Kitab al-Intisar -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://archive.org/details/lntsr-j1/lntsr-j3/page/n171/mode/2up"
            target="_blank"
@@ -334,7 +545,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-900 border border-amber-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">
                   Internet Archive · Vol. 3, p. n171
                 </span>
                 <span class="text-xs text-stone-500 font-medium">2-Page Reader View</span>
@@ -366,7 +577,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://archive.org/details/lntsr-j1/lntsr-j3/page/n171/mode/2up"
-                  data-copy-label="Kitāb al-Intiṣār (Vol. 3, p. n171) link"
+                  data-copy-label="Kitāb al-Intiṣār ʿalā ʿUlamāʾ al-Amṣār"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -377,7 +588,6 @@
         </div>
       </div>
 
-      <!-- Reference 7: Nevada Law Journal / Susan Etta Keller -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://scholars.law.unlv.edu/nlj/vol24/iss2/4/"
            target="_blank"
@@ -386,7 +596,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-red-50 text-[#8C1515] border border-red-100">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-red-50 text-[#8C1515] border-red-100">
                   Law Journal · Article 4
                 </span>
                 <span class="text-xs text-stone-500 font-medium">24 Nev. L.J. Iss. 2 (2024)</span>
@@ -395,7 +605,7 @@
                 Doing Things with the Language of Law and Gender
               </h2>
               <p class="text-sm text-stone-600">
-                Susan Etta Keller · <em>Nevada Law Journal</em>, Vol. 24, Iss. 2, Article 4 (Speech Act Theory)
+                Susan Etta Keller · Nevada Law Journal, Vol. 24, Iss. 2, Article 4 (Speech Act Theory)
               </p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">
                 scholars.law.unlv.edu/nlj/vol24/iss2/4/
@@ -417,7 +627,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://scholars.law.unlv.edu/nlj/vol24/iss2/4/"
-                  data-copy-label="Nevada Law Journal link"
+                  data-copy-label="Doing Things with the Language of Law and Gender"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -428,7 +638,6 @@
         </div>
       </div>
 
-      <!-- Reference 8: SSRN Paper 3798659 -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3798659"
            target="_blank"
@@ -437,7 +646,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-purple-50 text-purple-800 border border-purple-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-purple-50 text-purple-800 border-purple-200/70">
                   SSRN · Working Paper
                 </span>
                 <span class="text-xs text-stone-500 font-medium">Abstract 3798659</span>
@@ -468,7 +677,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3798659"
-                  data-copy-label="SSRN abstract 3798659 link"
+                  data-copy-label="SSRN Research Paper (Abstract 3798659)"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -479,7 +688,6 @@
         </div>
       </div>
 
-      <!-- Reference 9: JSTOR (Avigail Noy) -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://www.jstor.org/stable/10.7817/jameroriesoci.141.4.0803"
            target="_blank"
@@ -488,7 +696,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-emerald-50 text-emerald-800 border-emerald-200/70">
                   JSTOR · Journal Article
                 </span>
                 <span class="text-xs text-stone-500 font-medium">JAOS 141.4 (2021)</span>
@@ -497,7 +705,7 @@
                 Did the Arabic Lexicographers Invent Majāz?
               </h2>
               <p class="text-sm text-stone-600">
-                Avigail Noy · <em>Journal of the American Oriental Society</em>, Vol. 141, No. 4, pp. 803–822
+                Avigail Noy · Journal of the American Oriental Society, Vol. 141, No. 4, pp. 803–822
               </p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">
                 jstor.org/stable/10.7817/jameroriesoci.141.4.0803
@@ -519,7 +727,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://www.jstor.org/stable/10.7817/jameroriesoci.141.4.0803"
-                  data-copy-label="JSTOR article link"
+                  data-copy-label="Did the Arabic Lexicographers Invent Majāz?"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -530,7 +738,6 @@
         </div>
       </div>
 
-      <!-- Reference 10: Brill Chapter (DOI) -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://doi.org/10.1163/9789047400851_011"
            target="_blank"
@@ -539,7 +746,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-blue-50 text-blue-800 border border-blue-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-blue-50 text-blue-800 border-blue-200/70">
                   Brill · Academic Chapter
                 </span>
                 <span class="text-xs text-stone-500 font-medium">DOI: 10.1163/9789047400851_011</span>
@@ -570,7 +777,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://doi.org/10.1163/9789047400851_011"
-                  data-copy-label="Brill chapter DOI"
+                  data-copy-label="Chapter 11 (Brill Publication)"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -581,7 +788,6 @@
         </div>
       </div>
 
-      <!-- Reference 11: SSRN Paper 7244519 -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7244519"
            target="_blank"
@@ -590,7 +796,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-purple-50 text-purple-800 border border-purple-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-purple-50 text-purple-800 border-purple-200/70">
                   SSRN · Working Paper
                 </span>
                 <span class="text-xs text-stone-500 font-medium">Abstract 7244519</span>
@@ -621,7 +827,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7244519"
-                  data-copy-label="SSRN paper link"
+                  data-copy-label="SSRN Research Paper (Abstract 7244519)"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -632,7 +838,6 @@
         </div>
       </div>
 
-      <!-- Reference 12: PMLA Article (Alexander Key) -->
       <div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">
         <a href="https://doi.org/10.1632/S0030812924000075"
            target="_blank"
@@ -641,7 +846,7 @@
           <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5 min-w-0">
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-rose-50 text-rose-900 border border-rose-200/70">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-rose-50 text-rose-900 border-rose-200/70">
                   PMLA · Journal Article
                 </span>
                 <span class="text-xs text-stone-500 font-medium">Vol. 139, No. 1 (2024)</span>
@@ -651,7 +856,7 @@
                 <span class="font-arabic text-lg sm:text-xl text-stone-700" dir="rtl" lang="ar">حقيقة</span>
               </h2>
               <p class="text-sm text-stone-600">
-                Alexander Key · <em>PMLA</em> (Modern Language Association / Cambridge Core)
+                Alexander Key · PMLA (Modern Language Association / Cambridge Core)
               </p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">
                 doi.org/10.1632/S0030812924000075
@@ -673,7 +878,7 @@
           </a>
           <button type="button"
                   data-copy-url="https://doi.org/10.1632/S0030812924000075"
-                  data-copy-label="PMLA article DOI"
+                  data-copy-label="Ḥaqīqah: Truth, Reality, and Accuracy"
                   class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -683,14 +888,24 @@
           </button>
         </div>
       </div>
-
     </section>
 
-    <!-- Copy All Action -->
-    <div class="mt-8 pt-6 border-t border-stone-200 flex items-center justify-between gap-4">
-      <p class="text-xs text-stone-500">
-        Want to save all 12 links to your notes?
-      </p>
+    <!-- Copy All & Reorder Toggle Action -->
+    <div class="mt-8 pt-6 border-t border-stone-200 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <p id="copyAllPrompt" class="text-xs text-stone-500">
+          Want to save all 12 links to your notes?
+        </p>
+        <button id="toggleReorderBtn"
+                type="button"
+                title="Reorder or edit reference entries"
+                class="inline-flex items-center gap-1 text-xs font-medium text-stone-400 hover:text-[#8C1515] transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+          </svg>
+          <span>Reorder / Edit</span>
+        </button>
+      </div>
       <button id="copyAllBtn"
               type="button"
               class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium bg-stone-900 text-white hover:bg-[#8C1515] transition-colors shadow-sm">
@@ -702,6 +917,7 @@
       </button>
     </div>
   </main>
+  </div>
 
   <!-- Enlarged QR Code Modal -->
   <div id="qrModal"
@@ -734,12 +950,397 @@
   <div id="toast"
        role="status"
        aria-live="polite"
-       class="fixed bottom-5 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 transition-opacity duration-200 bg-stone-900 text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-lg">
+       class="fixed bottom-5 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 transition-opacity duration-200 bg-stone-900 text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-lg z-50">
     Link copied to clipboard
   </div>
 
   <script>
     (function () {
+      // Load the two lecture photos when hosted in the same folder on GitHub Pages
+      var img1 = document.getElementById('imgSlide1');
+      var img2 = document.getElementById('imgSlide2');
+
+      function tryLoadPhoto(imgEl, fileName) {
+        if (!imgEl) return;
+        var probe = new Image();
+        probe.onload = function () {
+          imgEl.src = fileName;
+        };
+        probe.src = fileName;
+      }
+
+      tryLoadPhoto(img1, 'PXL_20261008_083923259.jpg');
+      tryLoadPhoto(img2, 'PXL_20261008_083100602.jpg');
+
+      // Slide navigation state (1 -> 2 -> 3)
+      var currentSlide = 1;
+      var slide1 = document.getElementById('slide1');
+      var slide2 = document.getElementById('slide2');
+      var slide3 = document.getElementById('slide3');
+
+      function showSlide(n) {
+        if (n < 1) n = 1;
+        if (n > 3) n = 3;
+        currentSlide = n;
+
+        if (slide1) {
+          slide1.classList.toggle('hidden', currentSlide !== 1);
+          slide1.classList.toggle('flex', currentSlide === 1);
+        }
+        if (slide2) {
+          slide2.classList.toggle('hidden', currentSlide !== 2);
+          slide2.classList.toggle('flex', currentSlide === 2);
+        }
+        if (slide3) {
+          slide3.classList.toggle('hidden', currentSlide !== 3);
+          slide3.classList.toggle('flex', currentSlide === 3);
+        }
+        window.scrollTo(0, 0);
+      }
+
+      function handlePhotoClick(e) {
+        var x = e.clientX || 0;
+        var w = window.innerWidth || 1;
+        if (x < w * 0.3) {
+          showSlide(currentSlide - 1);
+        } else {
+          showSlide(currentSlide + 1);
+        }
+      }
+
+      if (slide1) slide1.addEventListener('click', handlePhotoClick);
+      if (slide2) slide2.addEventListener('click', handlePhotoClick);
+
+      document.addEventListener('keydown', function (e) {
+        var activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+        if (activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select') return;
+        var qrModal = document.getElementById('qrModal');
+        if (qrModal && !qrModal.classList.contains('hidden')) {
+          if (e.key === 'Escape') qrModal.classList.add('hidden');
+          return;
+        }
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && currentSlide < 3)) {
+          e.preventDefault();
+          showSlide(currentSlide + 1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault();
+          showSlide(currentSlide - 1);
+        } else if (e.key === '1') {
+          showSlide(1);
+        } else if (e.key === '2') {
+          showSlide(2);
+        } else if (e.key === '3') {
+          showSlide(3);
+        }
+      });
+
+      var STORAGE_KEY = 'alexander_key_refs_v3';
+      var badgeColorMap = {
+        red: 'bg-red-50 text-[#8C1515] border-red-100',
+        amber: 'bg-amber-50 text-amber-900 border-amber-200/70',
+        emerald: 'bg-emerald-50 text-emerald-800 border-emerald-200/70',
+        blue: 'bg-blue-50 text-blue-800 border-blue-200/70',
+        purple: 'bg-purple-50 text-purple-800 border-purple-200/70',
+        rose: 'bg-rose-50 text-rose-900 border-rose-200/70'
+      };
+
+      var defaultRefs = Array.isArray(window.DEFAULT_REFERENCES) ? window.DEFAULT_REFERENCES : [];
+      var references = [];
+      var isReorderMode = false;
+      var dragSrcIndex = null;
+
+      function cloneRefs(arr) {
+        return JSON.parse(JSON.stringify(arr));
+      }
+
+      function loadReferences() {
+        try {
+          var saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) {
+            var parsed = JSON.parse(saved);
+            if (Array.isArray(parsed) && parsed.length === defaultRefs.length) {
+              references = parsed;
+              return;
+            }
+          }
+        } catch (e) {
+          // Ignore localStorage restrictions in sandboxed iframes
+        }
+        references = cloneRefs(defaultRefs);
+      }
+
+      function saveReferences() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(references));
+        } catch (e) {
+          // Ignore localStorage restrictions
+        }
+      }
+
+      function escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function formatShortUrl(url) {
+        return String(url || '').replace(/^https?:\/\/(www\.)?/, '');
+      }
+
+      var listEl = document.getElementById('referenceList');
+      var reorderBanner = document.getElementById('reorderBanner');
+      var toggleReorderBtn = document.getElementById('toggleReorderBtn');
+      var doneReorderBtn = document.getElementById('doneReorderBtn');
+      var copyUpdatedHtmlBtn = document.getElementById('copyUpdatedHtmlBtn');
+      var resetOrderBtn = document.getElementById('resetOrderBtn');
+
+      function renderList() {
+        if (!listEl) return;
+        var html = references.map(function (item, idx) {
+          var bCls = badgeColorMap[item.badgeColor] || badgeColorMap.red;
+          var shortUrl = formatShortUrl(item.url);
+          var titleBlock = item.arabicTitle
+            ? '<h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug flex flex-wrap items-baseline gap-x-3 gap-y-1">' +
+                '<span>' + escapeHtml(item.title) + '</span>' +
+                '<span class="font-arabic text-lg sm:text-xl text-stone-700" dir="rtl" lang="ar">' + escapeHtml(item.arabicTitle) + '</span>' +
+              '</h2>'
+            : '<h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">' +
+                escapeHtml(item.title) +
+              '</h2>';
+
+          if (!isReorderMode) {
+            return (
+              '<div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">' +
+                '<a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener noreferrer" class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">' +
+                  '<div class="flex items-start justify-between gap-4">' +
+                    '<div class="space-y-1.5 min-w-0">' +
+                      '<div class="flex items-center gap-2 flex-wrap">' +
+                        '<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border ' + bCls + '">' +
+                          escapeHtml(item.badge) +
+                        '</span>' +
+                        '<span class="text-xs text-stone-500 font-medium">' + escapeHtml(item.note) + '</span>' +
+                      '</div>' +
+                      titleBlock +
+                      '<p class="text-sm text-stone-600">' + escapeHtml(item.subtitle) + '</p>' +
+                      '<p class="text-xs text-stone-400 truncate pt-1 font-mono">' + escapeHtml(shortUrl) + '</p>' +
+                    '</div>' +
+                    '<span class="shrink-0 mt-1 p-2 rounded-lg bg-stone-50 text-stone-600" aria-hidden="true">' +
+                      '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">' +
+                        '<path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H8M17 7V16" />' +
+                      '</svg>' +
+                    '</span>' +
+                  '</div>' +
+                '</a>' +
+                '<div class="px-5 py-2.5 bg-stone-50/70 border-t border-stone-100 flex items-center justify-between">' +
+                  '<a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-[#8C1515] hover:underline">' +
+                    escapeHtml(item.openText || 'Open link →') +
+                  '</a>' +
+                  '<button type="button" data-copy-url="' + escapeHtml(item.url) + '" data-copy-label="' + escapeHtml(item.title) + '" class="copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-stone-500 hover:text-stone-800 py-1 px-2 rounded hover:bg-stone-200/50 transition-colors">' +
+                    '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">' +
+                      '<rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>' +
+                      '<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>' +
+                    '</svg>' +
+                    '<span>Copy link</span>' +
+                  '</button>' +
+                '</div>' +
+              '</div>'
+            );
+          }
+
+          // Reorder & Inline Edit Mode Card
+          var upDisabled = idx === 0 ? 'opacity-30 pointer-events-none' : 'hover:bg-stone-200 text-stone-700';
+          var downDisabled = idx === references.length - 1 ? 'opacity-30 pointer-events-none' : 'hover:bg-stone-200 text-stone-700';
+
+          return (
+            '<div draggable="true" data-card-index="' + idx + '" class="reorder-card bg-white rounded-xl border-2 border-stone-300 shadow-sm overflow-hidden transition-all">' +
+              '<div class="px-4 py-2.5 bg-stone-100 border-b border-stone-200 flex items-center justify-between gap-2">' +
+                '<div class="flex items-center gap-2 text-xs font-semibold text-stone-700 cursor-grab">' +
+                  '<svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">' +
+                    '<path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />' +
+                  '</svg>' +
+                  '<span>Position #' + (idx + 1) + '</span>' +
+                '</div>' +
+                '<div class="flex items-center gap-1">' +
+                  '<button type="button" data-move-top="' + idx + '" title="Move to top" class="px-2 py-1 rounded text-xs font-medium bg-white border border-stone-200 ' + upDisabled + '">⇈ Top</button>' +
+                  '<button type="button" data-move-up="' + idx + '" title="Move up" class="px-2.5 py-1 rounded text-xs font-bold bg-white border border-stone-200 ' + upDisabled + '">↑ Up</button>' +
+                  '<button type="button" data-move-down="' + idx + '" title="Move down" class="px-2.5 py-1 rounded text-xs font-bold bg-white border border-stone-200 ' + downDisabled + '">↓ Down</button>' +
+                '</div>' +
+              '</div>' +
+              '<div class="p-4 sm:p-5 space-y-3">' +
+                '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">' +
+                  '<div>' +
+                    '<label class="block text-[11px] font-medium text-stone-500 mb-1">Display Title</label>' +
+                    '<input type="text" data-edit-index="' + idx + '" data-edit-field="title" value="' + escapeHtml(item.title) + '" class="edit-input w-full px-2.5 py-1.5 text-sm rounded-lg border border-stone-300 focus:outline-none focus:border-[#8C1515]" />' +
+                  '</div>' +
+                  '<div>' +
+                    '<label class="block text-[11px] font-medium text-stone-500 mb-1">Arabic Title (optional)</label>' +
+                    '<input type="text" dir="rtl" data-edit-index="' + idx + '" data-edit-field="arabicTitle" value="' + escapeHtml(item.arabicTitle) + '" class="edit-input font-arabic w-full px-2.5 py-1.5 text-sm rounded-lg border border-stone-300 focus:outline-none focus:border-[#8C1515]" />' +
+                  '</div>' +
+                '</div>' +
+                '<div>' +
+                  '<label class="block text-[11px] font-medium text-stone-500 mb-1">Subtitle / Citation Details</label>' +
+                  '<input type="text" data-edit-index="' + idx + '" data-edit-field="subtitle" value="' + escapeHtml(item.subtitle) + '" class="edit-input w-full px-2.5 py-1.5 text-xs rounded-lg border border-stone-300 focus:outline-none focus:border-[#8C1515]" />' +
+                '</div>' +
+                '<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">' +
+                  '<div>' +
+                    '<label class="block text-[11px] font-medium text-stone-500 mb-1">Badge Label</label>' +
+                    '<input type="text" data-edit-index="' + idx + '" data-edit-field="badge" value="' + escapeHtml(item.badge) + '" class="edit-input w-full px-2.5 py-1.5 text-xs rounded-lg border border-stone-300 focus:outline-none focus:border-[#8C1515]" />' +
+                  '</div>' +
+                  '<div>' +
+                    '<label class="block text-[11px] font-medium text-stone-500 mb-1">Secondary Note / Date</label>' +
+                    '<input type="text" data-edit-index="' + idx + '" data-edit-field="note" value="' + escapeHtml(item.note) + '" class="edit-input w-full px-2.5 py-1.5 text-xs rounded-lg border border-stone-300 focus:outline-none focus:border-[#8C1515]" />' +
+                  '</div>' +
+                  '<div>' +
+                    '<label class="block text-[11px] font-medium text-stone-500 mb-1">Link URL</label>' +
+                    '<input type="text" data-edit-index="' + idx + '" data-edit-field="url" value="' + escapeHtml(item.url) + '" class="edit-input font-mono w-full px-2.5 py-1.5 text-xs rounded-lg border border-stone-300 focus:outline-none focus:border-[#8C1515]" />' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>'
+          );
+        }).join('');
+
+        listEl.innerHTML = html;
+        attachCardListeners();
+      }
+
+      function moveItem(fromIdx, toIdx) {
+        if (toIdx < 0 || toIdx >= references.length || fromIdx === toIdx) return;
+        var moved = references.splice(fromIdx, 1)[0];
+        references.splice(toIdx, 0, moved);
+        saveReferences();
+        renderList();
+      }
+
+      function attachCardListeners() {
+        var copyButtons = listEl.querySelectorAll('.copy-btn');
+        copyButtons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var url = btn.getAttribute('data-copy-url');
+            var label = btn.getAttribute('data-copy-label') || 'Link';
+            if (url) {
+              copyText(url, 'Copied ' + label);
+            }
+          });
+        });
+
+        var upBtns = listEl.querySelectorAll('[data-move-up]');
+        upBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-move-up'), 10);
+            moveItem(idx, idx - 1);
+          });
+        });
+
+        var downBtns = listEl.querySelectorAll('[data-move-down]');
+        downBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-move-down'), 10);
+            moveItem(idx, idx + 1);
+          });
+        });
+
+        var topBtns = listEl.querySelectorAll('[data-move-top]');
+        topBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-move-top'), 10);
+            moveItem(idx, 0);
+          });
+        });
+
+        var editInputs = listEl.querySelectorAll('.edit-input');
+        editInputs.forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            var idx = parseInt(inp.getAttribute('data-edit-index'), 10);
+            var field = inp.getAttribute('data-edit-field');
+            if (references[idx] && field) {
+              references[idx][field] = inp.value;
+              saveReferences();
+            }
+          });
+        });
+
+        var cards = listEl.querySelectorAll('.reorder-card');
+        cards.forEach(function (card) {
+          card.addEventListener('dragstart', function (e) {
+            dragSrcIndex = parseInt(card.getAttribute('data-card-index'), 10);
+            card.classList.add('dragging-card');
+            if (e.dataTransfer) {
+              e.dataTransfer.effectAllowed = 'move';
+            }
+          });
+          card.addEventListener('dragend', function () {
+            card.classList.remove('dragging-card');
+            dragSrcIndex = null;
+          });
+          card.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            if (e.dataTransfer) {
+              e.dataTransfer.dropEffect = 'move';
+            }
+          });
+          card.addEventListener('drop', function (e) {
+            e.preventDefault();
+            var targetIndex = parseInt(card.getAttribute('data-card-index'), 10);
+            if (dragSrcIndex !== null && !isNaN(targetIndex) && dragSrcIndex !== targetIndex) {
+              moveItem(dragSrcIndex, targetIndex);
+            }
+          });
+        });
+      }
+
+      function setReorderMode(enabled) {
+        isReorderMode = enabled;
+        if (reorderBanner) {
+          reorderBanner.classList.toggle('hidden', !isReorderMode);
+        }
+        renderList();
+      }
+
+      if (toggleReorderBtn) {
+        toggleReorderBtn.addEventListener('click', function () {
+          setReorderMode(!isReorderMode);
+        });
+      }
+      if (doneReorderBtn) {
+        doneReorderBtn.addEventListener('click', function () {
+          setReorderMode(false);
+        });
+      }
+      if (resetOrderBtn) {
+        resetOrderBtn.addEventListener('click', function () {
+          references = cloneRefs(defaultRefs);
+          saveReferences();
+          renderList();
+          showToast('Reset to default order');
+        });
+      }
+      if (copyUpdatedHtmlBtn) {
+        copyUpdatedHtmlBtn.addEventListener('click', function () {
+          // Temporarily render in clean mode so the exported HTML snapshot is clean
+          var prevMode = isReorderMode;
+          isReorderMode = false;
+          renderList();
+          if (reorderBanner) reorderBanner.classList.add('hidden');
+
+          var docHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+          var newRefsJson = JSON.stringify(references, null, 2);
+          docHtml = docHtml.replace(
+            /\/\*__REFS_START__\*\/[\s\S]*?\/\*__REFS_END__\*\//,
+            '/*__REFS_START__*/' + newRefsJson + '/*__REFS_END__*/'
+          );
+
+          isReorderMode = prevMode;
+          if (reorderBanner) reorderBanner.classList.toggle('hidden', !isReorderMode);
+          renderList();
+
+          copyText(docHtml, 'Copied full updated HTML! Paste into GitHub index.html');
+        });
+      }
+
+      // Toast & Clipboard handling
       var toast = document.getElementById('toast');
       var toastTimer = null;
 
@@ -752,7 +1353,7 @@
         toastTimer = setTimeout(function () {
           toast.classList.remove('opacity-100');
           toast.classList.add('opacity-0');
-        }, 2200);
+        }, 2400);
       }
 
       function copyText(text, successMsg) {
@@ -784,35 +1385,13 @@
         document.body.removeChild(ta);
       }
 
-      var copyButtons = document.querySelectorAll('.copy-btn');
-      copyButtons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var url = btn.getAttribute('data-copy-url');
-          var label = btn.getAttribute('data-copy-label') || 'Link';
-          if (url) {
-            copyText(url, 'Copied ' + label);
-          }
-        });
-      });
-
       var copyAllBtn = document.getElementById('copyAllBtn');
       if (copyAllBtn) {
         copyAllBtn.addEventListener('click', function () {
-          var allText = [
-            '1. 101 N.Y.U. L. Rev. 1046 (2026): https://nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-1046.pdf',
-            '2. 101 N.Y.U. L. Rev. 888 (2026): https://nyulawreview.org/wp-content/uploads/2026/06/101-NYU-L-Rev-888.pdf',
-            '3. Al-Umniyya fi Idrak al-Niyya (p. 186): https://archive.org/details/AlUmnyaFiIdarakNya/page/186/mode/2up',
-            '4. Shihāb al-Dīn al-Qarāfī, Kitāb al-Furūq (Vol. 1, p. 127): https://archive.org/details/foroq_resalah/01/page/n127/mode/2up',
-            '5. Primary Text (vol.1 p.117): https://archive.org/details/20200621_20200621_2104/page/n23/mode/2up',
-            '6. Kitāb al-Intiṣār ʿalā ʿUlamāʾ al-Amṣār (Vol. 3, p. n171): https://archive.org/details/lntsr-j1/lntsr-j3/page/n171/mode/2up',
-            '7. Susan Etta Keller, "Doing Things with the Language of Law and Gender" (24 Nev. L.J. Iss. 2, Art. 4): https://scholars.law.unlv.edu/nlj/vol24/iss2/4/',
-            '8. SSRN Paper (Abstract 3798659): https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3798659',
-            '9. Avigail Noy, "Did the Arabic Lexicographers Invent Majāz?" (JAOS 141.4): https://www.jstor.org/stable/10.7817/jameroriesoci.141.4.0803',
-            '10. Brill Chapter (DOI: 10.1163/9789047400851_011): https://doi.org/10.1163/9789047400851_011',
-            '11. SSRN Paper (Abstract 7244519): https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7244519',
-            '12. Alexander Key, "Ḥaqīqah: Truth, Reality, and Accuracy" (PMLA 139.1): https://doi.org/10.1632/S0030812924000075'
-          ].join('\n');
-          copyText(allText, 'Copied all 12 reference links');
+          var allText = references.map(function (item, idx) {
+            return (idx + 1) + '. ' + item.title + ' (' + item.note + '): ' + item.url;
+          }).join('\n');
+          copyText(allText, 'Copied all ' + references.length + ' reference links');
         });
       }
 
@@ -838,6 +1417,10 @@
           }
         });
       }
+
+      // Initialize list from single source of truth
+      loadReferences();
+      renderList();
     })();
   </script>
 </body>
