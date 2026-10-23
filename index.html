@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexander Key Lecture Slides — 10/29/26</title>
+  <title>Alexander Key Presentation Handout — Referenced Sources</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,23 +38,10 @@
       opacity: 0.45;
       border-color: #8C1515 !important;
     }
-    .photo-slide {
-      width: 100vw;
-      height: 100vh;
-      background-color: #000000;
-      overflow: hidden;
-      user-select: none;
-      cursor: pointer;
-    }
-    .photo-slide img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: contain;
-      display: block;
-    }
+
   </style>
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen flex flex-col justify-between py-10 px-4 sm:px-6 lg:px-8">
 
   <!-- =====================================================================
        SINGLE PLACE TO EDIT REFERENCES OR ORDER IN CODE:
@@ -254,21 +241,6 @@
 ]/*__REFS_END__*/;
   </script>
 
-  <!-- SLIDE 1: Pure Full-Screen Photo A (PXL_20261008_083923259.jpg) -->
-  <div id="slide1" class="photo-slide flex items-center justify-center">
-    <img id="imgSlide1"
-         src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Crect width='1200' height='900' fill='%230c0a09'/%3E%3Ctext x='50%25' y='47%25' dominant-baseline='middle' text-anchor='middle' fill='%23a8a29e' font-family='Georgia, serif' font-size='28'%3ESlide 1: PXL_20261008_083923259.jpg%3C/text%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' fill='%2357534e' font-family='sans-serif' font-size='16'%3EUpload PXL_20261008_083923259.jpg to the same GitHub folder (Press %E2%86%92 or click to advance)%3C/text%3E%3C/svg%3E"
-         alt="Slide 1" />
-  </div>
-
-  <!-- SLIDE 2: Pure Full-Screen Photo B (PXL_20261008_083100602.jpg) -->
-  <div id="slide2" class="photo-slide hidden items-center justify-center">
-    <img id="imgSlide2"
-         src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Crect width='1200' height='900' fill='%230c0a09'/%3E%3Ctext x='50%25' y='47%25' dominant-baseline='middle' text-anchor='middle' fill='%23a8a29e' font-family='Georgia, serif' font-size='28'%3ESlide 2: PXL_20261008_083100602.jpg%3C/text%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' fill='%2357534e' font-family='sans-serif' font-size='16'%3EUpload PXL_20261008_083100602.jpg to the same GitHub folder (Press %E2%86%92 or click to advance)%3C/text%3E%3C/svg%3E"
-         alt="Slide 2" />
-  </div>
-  <!-- SLIDE 3: Referenced Sources Page -->
-  <div id="slide3" class="hidden min-h-screen flex-col justify-between py-10 px-4 sm:px-6 lg:px-8">
   <main class="w-full max-w-xl mx-auto">
     <!-- Minimal Academic Header with Top-Right QR Code -->
     <header class="mb-8 pb-6 border-b border-stone-200">
@@ -1031,7 +1003,6 @@
       </button>
     </div>
   </main>
-  </div>
 
   <!-- Enlarged QR Code Modal -->
   <div id="qrModal"
@@ -1070,83 +1041,7 @@
 
   <script>
     (function () {
-      // Load the two lecture photos when hosted in the same folder on GitHub Pages
-      var img1 = document.getElementById('imgSlide1');
-      var img2 = document.getElementById('imgSlide2');
 
-      function tryLoadPhoto(imgEl, fileName) {
-        if (!imgEl) return;
-        var probe = new Image();
-        probe.onload = function () {
-          imgEl.src = fileName;
-        };
-        probe.src = fileName;
-      }
-
-      tryLoadPhoto(img1, 'PXL_20261008_083923259.jpg');
-      tryLoadPhoto(img2, 'PXL_20261008_083100602.jpg');
-
-      // Slide navigation state (1 -> 2 -> 3)
-      var currentSlide = 1;
-      var slide1 = document.getElementById('slide1');
-      var slide2 = document.getElementById('slide2');
-      var slide3 = document.getElementById('slide3');
-
-      function showSlide(n) {
-        if (n < 1) n = 1;
-        if (n > 3) n = 3;
-        currentSlide = n;
-
-        if (slide1) {
-          slide1.classList.toggle('hidden', currentSlide !== 1);
-          slide1.classList.toggle('flex', currentSlide === 1);
-        }
-        if (slide2) {
-          slide2.classList.toggle('hidden', currentSlide !== 2);
-          slide2.classList.toggle('flex', currentSlide === 2);
-        }
-        if (slide3) {
-          slide3.classList.toggle('hidden', currentSlide !== 3);
-          slide3.classList.toggle('flex', currentSlide === 3);
-        }
-        window.scrollTo(0, 0);
-      }
-
-      function handlePhotoClick(e) {
-        var x = e.clientX || 0;
-        var w = window.innerWidth || 1;
-        if (x < w * 0.3) {
-          showSlide(currentSlide - 1);
-        } else {
-          showSlide(currentSlide + 1);
-        }
-      }
-
-      if (slide1) slide1.addEventListener('click', handlePhotoClick);
-      if (slide2) slide2.addEventListener('click', handlePhotoClick);
-
-      document.addEventListener('keydown', function (e) {
-        var activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
-        if (activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select') return;
-        var qrModal = document.getElementById('qrModal');
-        if (qrModal && !qrModal.classList.contains('hidden')) {
-          if (e.key === 'Escape') qrModal.classList.add('hidden');
-          return;
-        }
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && currentSlide < 3)) {
-          e.preventDefault();
-          showSlide(currentSlide + 1);
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-          e.preventDefault();
-          showSlide(currentSlide - 1);
-        } else if (e.key === '1') {
-          showSlide(1);
-        } else if (e.key === '2') {
-          showSlide(2);
-        } else if (e.key === '3') {
-          showSlide(3);
-        }
-      });
 
       var STORAGE_KEY = 'alexander_key_refs_v4';
       var badgeColorMap = {
