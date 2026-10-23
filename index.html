@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexander Key Presentation Handout — Referenced Sources</title>
+  <title>Alexander Key Lecture Slides — 10/29/26</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,10 +38,23 @@
       opacity: 0.45;
       border-color: #8C1515 !important;
     }
-
+    .photo-slide {
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000;
+      overflow: hidden;
+      user-select: none;
+      cursor: pointer;
+    }
+    .photo-slide img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      display: block;
+    }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between py-10 px-4 sm:px-6 lg:px-8">
+<body class="min-h-screen">
 
   <!-- =====================================================================
        SINGLE PLACE TO EDIT REFERENCES OR ORDER IN CODE:
@@ -241,6 +254,21 @@
 ]/*__REFS_END__*/;
   </script>
 
+  <!-- SLIDE 1: Pure Full-Screen Photo A (PXL_20261008_083923259.jpg) -->
+  <div id="slide1" class="photo-slide flex items-center justify-center">
+    <img id="imgSlide1"
+         src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Crect width='1200' height='900' fill='%230c0a09'/%3E%3Ctext x='50%25' y='47%25' dominant-baseline='middle' text-anchor='middle' fill='%23a8a29e' font-family='Georgia, serif' font-size='28'%3ESlide 1: PXL_20261008_083923259.jpg%3C/text%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' fill='%2357534e' font-family='sans-serif' font-size='16'%3EUpload PXL_20261008_083923259.jpg to the same GitHub folder (Press %E2%86%92 or click to advance)%3C/text%3E%3C/svg%3E"
+         alt="Slide 1" />
+  </div>
+
+  <!-- SLIDE 2: Pure Full-Screen Photo B (PXL_20261008_083100602.jpg) -->
+  <div id="slide2" class="photo-slide hidden items-center justify-center">
+    <img id="imgSlide2"
+         src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Crect width='1200' height='900' fill='%230c0a09'/%3E%3Ctext x='50%25' y='47%25' dominant-baseline='middle' text-anchor='middle' fill='%23a8a29e' font-family='Georgia, serif' font-size='28'%3ESlide 2: PXL_20261008_083100602.jpg%3C/text%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' fill='%2357534e' font-family='sans-serif' font-size='16'%3EUpload PXL_20261008_083100602.jpg to the same GitHub folder (Press %E2%86%92 or click to advance)%3C/text%3E%3C/svg%3E"
+         alt="Slide 2" />
+  </div>
+  <!-- SLIDE 3: Referenced Sources Page -->
+  <div id="slide3" class="hidden min-h-screen flex-col justify-between py-10 px-4 sm:px-6 lg:px-8">
   <main class="w-full max-w-xl mx-auto">
     <!-- Minimal Academic Header with Top-Right QR Code -->
     <header class="mb-8 pb-6 border-b border-stone-200">
@@ -318,7 +346,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">Monograph</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Persianate Verse and the Poetics of Eastern Internationalism</h2>
               
@@ -357,7 +385,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">Monograph</span><span class="text-xs text-stone-500 font-medium">#1726 in the Arabic and English editions</span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">al-Muwattaʾ</h2>
               <p class="text-sm text-stone-600">Malik ibn Anas (d. 795)</p>
@@ -396,9 +424,9 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">Internet Archive</span><span class="text-xs text-stone-500 font-medium"></span></div>
-              <div class="w-full text-right" dir="rtl"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar">دلائل الإعجاز لعبد القاهر الجرجاني</h2></div>
+              <div class="w-full text-right" dir="rtl" style="width: 100%; text-align: right; direction: rtl;"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar" style="width: 100%; text-align: right; direction: rtl;">دلائل الإعجاز لعبد القاهر الجرجاني</h2></div>
               <p class="text-sm text-stone-600">ʿAnd al-Qadir al-Jurjani (d. 1078)</p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">archive.org/details/ar105crit48/page/n267/mode/2up</p>
             </div>
@@ -435,9 +463,9 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">Internet Archive</span><span class="text-xs text-stone-500 font-medium"></span></div>
-              <div class="w-full text-right" dir="rtl"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar">كتاب الفروق لشهاب الدين القرافي</h2></div>
+              <div class="w-full text-right" dir="rtl" style="width: 100%; text-align: right; direction: rtl;"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar" style="width: 100%; text-align: right; direction: rtl;">كتاب الفروق لشهاب الدين القرافي</h2></div>
               <p class="text-sm text-stone-600">al-Qarafi (d. 1285)</p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">archive.org/details/foroq_resalah/01/page/n127/mode/2up</p>
             </div>
@@ -474,7 +502,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-red-50 text-[#8C1515] border-red-100">Law Journal</span><span class="text-xs text-stone-500 font-medium">24 Nev. L.J. Iss. 2 (2024)</span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Doing Things with the Language of Law and Gender: Using Speech Act Theory to Understand the Meaning and Effect of the Gender Identity Backlash</h2>
               <p class="text-sm text-stone-600">Keller</p>
@@ -513,7 +541,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-purple-50 text-purple-800 border-purple-200/70">Law Review</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Speech Act Theory and Textualism's Unfaithful Agency Problem</h2>
               <p class="text-sm text-stone-600">Perkins</p>
@@ -552,7 +580,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-red-50 text-[#8C1515] border-red-100">Law Review</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Amending Linguistic Textualism</h2>
               <p class="text-sm text-stone-600">Cross</p>
@@ -591,7 +619,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-red-50 text-[#8C1515] border-red-100">Law Review</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Should linguistics inform textualism?</h2>
               <p class="text-sm text-stone-600">Tobia and Waldon</p>
@@ -630,7 +658,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-red-50 text-[#8C1515] border-red-100">Law Review</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Standard Textualism</h2>
               <p class="text-sm text-stone-600">Macleod</p>
@@ -669,7 +697,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-blue-50 text-blue-800 border-blue-200/70">Journal Article</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Fiction and Formalism: Toward a Functional Analysis of Uṣūl al-fiqh</h2>
               <p class="text-sm text-stone-600">Jackson</p>
@@ -708,7 +736,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-purple-50 text-purple-800 border-purple-200/70">SSRN · Working Paper</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Testing Ordinary Meaning in Islamic Law</h2>
               <p class="text-sm text-stone-600">Rabb</p>
@@ -747,7 +775,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-emerald-50 text-emerald-800 border-emerald-200/70">Journal Article</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Did the Arabic Lexicographers Invent Majāz?</h2>
               <p class="text-sm text-stone-600">Noy</p>
@@ -786,7 +814,7 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-rose-50 text-rose-900 border-rose-200/70">Journal Article</span><span class="text-xs text-stone-500 font-medium"></span></div>
               <h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">Haqiqah: truth, reality, accuracy</h2>
               <p class="text-sm text-stone-600">Key</p>
@@ -825,9 +853,9 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">Internet Archive</span><span class="text-xs text-stone-500 font-medium"></span></div>
-              <div class="w-full text-right" dir="rtl"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar">الأمنية في إدراك النية لشهاب الدين القرافي</h2></div>
+              <div class="w-full text-right" dir="rtl" style="width: 100%; text-align: right; direction: rtl;"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar" style="width: 100%; text-align: right; direction: rtl;">الأمنية في إدراك النية لشهاب الدين القرافي</h2></div>
               <p class="text-sm text-stone-600">al-Qarafi (d. 1285)</p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">archive.org/details/AlUmnyaFiIdarakNya/page/186/mode/2up</p>
             </div>
@@ -864,9 +892,9 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-red-50 text-[#8C1515] border-red-100">Internet Archive</span><span class="text-xs text-stone-500 font-medium">download zipped pdfs for vol. 1 p. 117</span></div>
-              <div class="w-full text-right" dir="rtl"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar">المجالس الوعظية في شرح أحاديث خير البرية لشمس الدين محمد بن محمد الرعيني المعروف بالحطاب</h2></div>
+              <div class="w-full text-right" dir="rtl" style="width: 100%; text-align: right; direction: rtl;"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar" style="width: 100%; text-align: right; direction: rtl;">المجالس الوعظية في شرح أحاديث خير البرية لشمس الدين محمد بن محمد الرعيني المعروف بالحطاب</h2></div>
               <p class="text-sm text-stone-600">al-Hattab (d. 1496)</p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">archive.org/details/20200621_20200621_2104/page/n23/mode/2up</p>
             </div>
@@ -903,9 +931,9 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">Internet Archive</span><span class="text-xs text-stone-500 font-medium"></span></div>
-              <div class="w-full text-right" dir="rtl"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar">الأشباه والنظائر لزين الدين بن إبراهيم بن محمد ابن نجيم</h2></div>
+              <div class="w-full text-right" dir="rtl" style="width: 100%; text-align: right; direction: rtl;"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar" style="width: 100%; text-align: right; direction: rtl;">الأشباه والنظائر لزين الدين بن إبراهيم بن محمد ابن نجيم</h2></div>
               <p class="text-sm text-stone-600">Ibn al-Najim (d. 1563)</p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">archive.org/details/20200621_20200621_2104/page/n23/mode/2up</p>
             </div>
@@ -942,9 +970,9 @@
            rel="noopener noreferrer"
            class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">
           <div class="flex items-start justify-between gap-4">
-            <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">
               <div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border bg-amber-50 text-amber-900 border-amber-200/70">Internet Archive</span><span class="text-xs text-stone-500 font-medium"></span></div>
-              <div class="w-full text-right" dir="rtl"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar">الانتصار على علماء الأمصار للمؤيد يحيى بن حمزة العلوي</h2></div>
+              <div class="w-full text-right" dir="rtl" style="width: 100%; text-align: right; direction: rtl;"><h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar" style="width: 100%; text-align: right; direction: rtl;">الانتصار على علماء الأمصار للمؤيد يحيى بن حمزة العلوي</h2></div>
               <p class="text-sm text-stone-600">al-Muʾayyad bi-Allah Yahya ibn Hamzah (d. 1345)</p>
               <p class="text-xs text-stone-400 truncate pt-1 font-mono">archive.org/details/lntsr-j1/lntsr-j3/page/n171/mode/2up</p>
             </div>
@@ -1003,6 +1031,7 @@
       </button>
     </div>
   </main>
+  </div>
 
   <!-- Enlarged QR Code Modal -->
   <div id="qrModal"
@@ -1041,9 +1070,85 @@
 
   <script>
     (function () {
+      // Load the two lecture photos when hosted in the same folder on GitHub Pages
+      var img1 = document.getElementById('imgSlide1');
+      var img2 = document.getElementById('imgSlide2');
 
+      function tryLoadPhoto(imgEl, fileName) {
+        if (!imgEl) return;
+        var probe = new Image();
+        probe.onload = function () {
+          imgEl.src = fileName;
+        };
+        probe.src = fileName;
+      }
 
-      var STORAGE_KEY = 'alexander_key_refs_v3';
+      tryLoadPhoto(img1, 'PXL_20261008_083923259.jpg');
+      tryLoadPhoto(img2, 'PXL_20261008_083100602.jpg');
+
+      // Slide navigation state (1 -> 2 -> 3)
+      var currentSlide = 1;
+      var slide1 = document.getElementById('slide1');
+      var slide2 = document.getElementById('slide2');
+      var slide3 = document.getElementById('slide3');
+
+      function showSlide(n) {
+        if (n < 1) n = 1;
+        if (n > 3) n = 3;
+        currentSlide = n;
+
+        if (slide1) {
+          slide1.classList.toggle('hidden', currentSlide !== 1);
+          slide1.classList.toggle('flex', currentSlide === 1);
+        }
+        if (slide2) {
+          slide2.classList.toggle('hidden', currentSlide !== 2);
+          slide2.classList.toggle('flex', currentSlide === 2);
+        }
+        if (slide3) {
+          slide3.classList.toggle('hidden', currentSlide !== 3);
+          slide3.classList.toggle('flex', currentSlide === 3);
+        }
+        window.scrollTo(0, 0);
+      }
+
+      function handlePhotoClick(e) {
+        var x = e.clientX || 0;
+        var w = window.innerWidth || 1;
+        if (x < w * 0.3) {
+          showSlide(currentSlide - 1);
+        } else {
+          showSlide(currentSlide + 1);
+        }
+      }
+
+      if (slide1) slide1.addEventListener('click', handlePhotoClick);
+      if (slide2) slide2.addEventListener('click', handlePhotoClick);
+
+      document.addEventListener('keydown', function (e) {
+        var activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+        if (activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select') return;
+        var qrModal = document.getElementById('qrModal');
+        if (qrModal && !qrModal.classList.contains('hidden')) {
+          if (e.key === 'Escape') qrModal.classList.add('hidden');
+          return;
+        }
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && currentSlide < 3)) {
+          e.preventDefault();
+          showSlide(currentSlide + 1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault();
+          showSlide(currentSlide - 1);
+        } else if (e.key === '1') {
+          showSlide(1);
+        } else if (e.key === '2') {
+          showSlide(2);
+        } else if (e.key === '3') {
+          showSlide(3);
+        }
+      });
+
+      var STORAGE_KEY = 'alexander_key_refs_v4';
       var badgeColorMap = {
         red: 'bg-red-50 text-[#8C1515] border-red-100',
         amber: 'bg-amber-50 text-amber-900 border-amber-200/70',
@@ -1119,8 +1224,8 @@
                 '<span class="font-arabic text-lg sm:text-xl text-stone-700 text-right ml-auto" dir="rtl" lang="ar">' + escapeHtml(aVal) + '</span>' +
               '</div>';
           } else if (aVal) {
-            titleBlock = '<div class="w-full text-right" dir="rtl">' +
-                '<h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar">' + escapeHtml(aVal) + '</h2>' +
+            titleBlock = '<div class="w-full text-right" dir="rtl" style="width: 100%; text-align: right; direction: rtl;">' +
+                '<h2 class="font-arabic text-xl sm:text-2xl font-medium text-stone-900 leading-snug text-right" dir="rtl" lang="ar" style="width: 100%; text-align: right; direction: rtl;">' + escapeHtml(aVal) + '</h2>' +
               '</div>';
           } else {
             titleBlock = '<h2 class="font-serif-title text-xl sm:text-2xl font-medium text-stone-900 leading-snug">' + escapeHtml(tVal) + '</h2>';
@@ -1131,7 +1236,7 @@
               '<div class="card-link bg-white rounded-xl border border-stone-200/90 shadow-sm overflow-hidden">' +
                 '<a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener noreferrer" class="block p-5 sm:p-6 focus:outline-none focus:ring-2 focus:ring-[#8C1515] focus:ring-inset">' +
                   '<div class="flex items-start justify-between gap-4">' +
-                    '<div class="space-y-1.5 min-w-0">' +
+                    '<div class="space-y-1.5 min-w-0 flex-1 w-full" style="flex: 1 1 0%; width: 100%;">' +
                       '<div class="flex items-center gap-2 flex-wrap">' +
                         '<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border ' + bCls + '">' +
                           escapeHtml(item.badge) +
