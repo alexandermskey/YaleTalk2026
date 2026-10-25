@@ -273,7 +273,7 @@
   <div id="slide3" class="hidden min-h-screen flex-col justify-between py-10 px-4 sm:px-6 lg:px-8">
   <main class="w-full max-w-xl mx-auto">
     <!-- Minimal Academic Header with Top-Right QR Code -->
-    <header class="mb-8 pb-6 border-b border-stone-200">
+    <header class="sticky top-0 z-30 bg-[#FAF9F6]/95 backdrop-blur-sm pt-2 mb-8 pb-6 border-b border-stone-200">
       <div class="flex items-start justify-between gap-4">
         <div class="min-w-0">
           <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#8C1515] mb-2">
@@ -1228,7 +1228,6 @@
 
       var listEl = document.getElementById('referenceList');
       var reorderBanner = document.getElementById('reorderBanner');
-      var toggleReorderBtn = document.getElementById('toggleReorderBtn');
       var doneReorderBtn = document.getElementById('doneReorderBtn');
       var copyUpdatedHtmlBtn = document.getElementById('copyUpdatedHtmlBtn');
       var resetOrderBtn = document.getElementById('resetOrderBtn');
@@ -1449,11 +1448,6 @@
         renderList();
       }
 
-      if (toggleReorderBtn) {
-        toggleReorderBtn.addEventListener('click', function () {
-          setReorderMode(!isReorderMode);
-        });
-      }
       if (doneReorderBtn) {
         doneReorderBtn.addEventListener('click', function () {
           setReorderMode(false);
