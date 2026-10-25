@@ -67,7 +67,7 @@
   {
     "id": "ref-16",
     "badge": "Monograph",
-    "badgeColor": "amber",
+    "badgeColor": "blue",
     "note": "",
     "title": "Persianate Verse and the Poetics of Eastern Internationalism",
     "arabicTitle": "",
@@ -78,7 +78,7 @@
   {
     "id": "ref-14",
     "badge": "Monograph",
-    "badgeColor": "amber",
+    "badgeColor": "blue",
     "note": "#1726 in the Arabic and English editions",
     "title": "al-Muwattaʾ",
     "arabicTitle": "",
@@ -110,9 +110,9 @@
   },
   {
     "id": "ref-7",
-    "badge": "Law Journal",
+    "badge": "Law Review",
     "badgeColor": "red",
-    "note": "",
+    "note": "24 Nev. L.J. Iss. 2 (2024)",
     "title": "Doing Things with the Language of Law and Gender: Using Speech Act Theory to Understand the Meaning and Effect of the Gender Identity Backlash",
     "arabicTitle": "",
     "subtitle": "Keller",
@@ -122,7 +122,7 @@
   {
     "id": "ref-8",
     "badge": "Law Review",
-    "badgeColor": "purple",
+    "badgeColor": "red",
     "note": "",
     "title": "Speech Act Theory and Textualism's Unfaithful Agency Problem",
     "arabicTitle": "",
@@ -152,7 +152,7 @@
     "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6482359",
     "openText": "Open on SSRN →"
   },
- {
+  {
     "id": "ref-11",
     "badge": "SSRN · Working Paper",
     "badgeColor": "purple",
@@ -163,7 +163,7 @@
     "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7244519",
     "openText": "Open Paper on SSRN →"
   },
-     {
+  {
     "id": "ref-9",
     "badge": "Journal Article",
     "badgeColor": "emerald",
@@ -174,10 +174,10 @@
     "url": "https://www.jstor.org/stable/10.7817/jameroriesoci.141.4.0803",
     "openText": "Open JAOS at JSTOR →"
   },
-       {
+  {
     "id": "ref-19",
     "badge": "Amicus Brief",
-    "badgeColor": "emerald",
+    "badgeColor": "rose",
     "note": "",
     "title": "Brief for Professors and Scholars of Linguistics and Law",
     "arabicTitle": "",
@@ -185,7 +185,7 @@
     "url": "https://www.supremecourt.gov/DocketPDF/24/24-935/392454/20260122125303674_24-935acProfessorsAndScholarsOfLinguisticsAndLaw.pdf",
     "openText": "Open at Supreme Court →"
   },
-      {
+  {
     "id": "ref-17",
     "badge": "Law Review",
     "badgeColor": "red",
@@ -199,7 +199,7 @@
   {
     "id": "ref-10",
     "badge": "Journal Article",
-    "badgeColor": "blue",
+    "badgeColor": "emerald",
     "note": "",
     "title": "Fiction and Formalism: Toward a Functional Analysis of Usul al-fiqh",
     "arabicTitle": "",
@@ -207,11 +207,10 @@
     "url": "https://doi.org/10.1163/9789047400851_011",
     "openText": "Open at Brill →"
   },
- 
- {
+  {
     "id": "ref-12",
     "badge": "Journal Article",
-    "badgeColor": "rose",
+    "badgeColor": "emerald",
     "note": "",
     "title": "Haqiqah: truth, reality, accuracy",
     "arabicTitle": "",
@@ -241,10 +240,10 @@
     "url": "https://archive.org/details/lntsr-j1/lntsr-j3/page/n171/mode/2up",
     "openText": "Open Archive.org reader (vol.3, p.171) →"
   },
-      {
+  {
     "id": "ref-13",
     "badge": "Internet Archive",
-    "badgeColor": "red",
+    "badgeColor": "amber",
     "note": "download zipped pdfs for vol. 1 p. 117",
     "title": "",
     "arabicTitle": "المجالس الوعظية في شرح أحاديث خير البرية لشمس الدين محمد بن محمد الرعيني المعروف بالحطاب",
@@ -262,7 +261,7 @@
     "subtitle": "Ibn al-Najim (d. 1563)",
     "url": "https://archive.org/details/20200621_20200621_2104/page/n23/mode/2up",
     "openText": "Open Archive.org reader (p.24) →"
-  },
+  }
 ]/*__REFS_END__*/;
   </script>
 
@@ -1182,7 +1181,7 @@
         }
       });
 
-      var STORAGE_KEY = 'alexander_key_refs_v6';
+      var STORAGE_KEY = 'alexander_key_refs_v7';
       var badgeColorMap = {
         red: 'bg-red-50 text-[#8C1515] border-red-100',
         amber: 'bg-amber-50 text-amber-900 border-amber-200/70',
@@ -1246,7 +1245,17 @@
       function renderList() {
         if (!listEl) return;
         var html = references.map(function (item, idx) {
-          var bCls = badgeColorMap[item.badgeColor] || badgeColorMap.red;
+          var typeColorMap = {
+            'Monograph': 'blue',
+            'Internet Archive': 'amber',
+            'Law Review': 'red',
+            'Law Journal': 'red',
+            'Journal Article': 'emerald',
+            'SSRN · Working Paper': 'purple',
+            'Amicus Brief': 'rose'
+          };
+          var resolvedColor = typeColorMap[item.badge] || item.badgeColor || 'red';
+          var bCls = badgeColorMap[resolvedColor] || badgeColorMap.red;
           var shortUrl = formatShortUrl(item.url);
                     var tVal = (item.title || '').trim();
           var aVal = (item.arabicTitle || '').trim();
