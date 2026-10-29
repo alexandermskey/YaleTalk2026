@@ -112,7 +112,7 @@
     "id": "ref-7",
     "badge": "Law Review",
     "badgeColor": "red",
-    "note": "",
+    "note": "24 Nev. L.J. Iss. 2 (2024)",
     "title": "Doing Things with the Language of Law and Gender: Using Speech Act Theory to Understand the Meaning and Effect of the Gender Identity Backlash",
     "arabicTitle": "",
     "subtitle": "Keller",
@@ -288,7 +288,7 @@
         <div class="min-w-0">
           <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#8C1515] mb-2">
             <span class="w-2 h-2 rounded-full bg-[#8C1515]"></span>
-            <span>Alexander Key Yale Presentation Handout 10/29/26</span>
+            <span>Alexander Key Presentation Handout 10/29/26</span>
           </div>
           <h1 class="font-serif-title text-3xl sm:text-4xl font-semibold text-stone-900 tracking-tight">
             Referenced Sources
@@ -1033,6 +1033,41 @@
   </main>
   </div>
 
+  <!-- SLIDE 4: Three Arabic Terms (الحقيقة / المجاز / النيّة) with Click-to-Reveal Translations -->
+  <div id="slide4" class="hidden min-h-screen w-screen bg-[#FAF9F6] text-[#1C1917] flex-col justify-center items-center px-8 sm:px-16 lg:px-28 py-12 select-none cursor-pointer">
+    <div class="w-full max-w-5xl mx-auto flex flex-col justify-between gap-16 sm:gap-24 lg:gap-28 py-6">
+      <!-- Row 1: الحقيقة -->
+      <div class="flex items-baseline justify-between gap-8 w-full border-b border-stone-200/70 pb-8 sm:pb-10">
+        <div class="slide4-translation opacity-0 -translate-x-2 transition-all duration-300 ease-out pointer-events-none text-left">
+          <span class="font-serif-title text-2xl sm:text-4xl lg:text-5xl text-stone-700 tracking-tight">truth/accuracy/literal/real</span>
+        </div>
+        <div class="text-right ml-auto" dir="rtl" lang="ar">
+          <span class="font-arabic text-5xl sm:text-7xl lg:text-8xl font-semibold text-stone-900 leading-none">الحقيقة</span>
+        </div>
+      </div>
+
+      <!-- Row 2: المجاز -->
+      <div class="flex items-baseline justify-between gap-8 w-full border-b border-stone-200/70 pb-8 sm:pb-10">
+        <div class="slide4-translation opacity-0 -translate-x-2 transition-all duration-300 ease-out pointer-events-none text-left">
+          <span class="font-serif-title text-2xl sm:text-4xl lg:text-5xl text-stone-700 tracking-tight">not <em class="italic">haqiqa</em></span>
+        </div>
+        <div class="text-right ml-auto" dir="rtl" lang="ar">
+          <span class="font-arabic text-5xl sm:text-7xl lg:text-8xl font-semibold text-stone-900 leading-none">المجاز</span>
+        </div>
+      </div>
+
+      <!-- Row 3: النيّة -->
+      <div class="flex items-baseline justify-between gap-8 w-full pb-2">
+        <div class="slide4-translation opacity-0 -translate-x-2 transition-all duration-300 ease-out pointer-events-none text-left">
+          <span class="font-serif-title text-2xl sm:text-4xl lg:text-5xl text-stone-700 tracking-tight">intent</span>
+        </div>
+        <div class="text-right ml-auto" dir="rtl" lang="ar">
+          <span class="font-arabic text-5xl sm:text-7xl lg:text-8xl font-semibold text-stone-900 leading-none">النيّة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Enlarged QR Code Modal -->
   <div id="qrModal"
        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm hidden"
@@ -1086,11 +1121,13 @@
       tryLoadPhoto(img1, 'PXL_20261008_083923259.jpg');
       tryLoadPhoto(img2, 'PXL_20261008_083100602.jpg');
 
-      // Slide navigation state (1 -> 2 -> 3)
+      // Slide navigation state (1 -> 2 -> 3 -> 4)
       var currentSlide = 1;
+      var slide4TranslationsShown = false;
       var slide1 = document.getElementById('slide1');
       var slide2 = document.getElementById('slide2');
       var slide3 = document.getElementById('slide3');
+      var slide4 = document.getElementById('slide4');
 
       // Detect if opened via the QR code (?refs=1) or on a mobile phone scanning the QR code
       var searchStr = window.location.search || '';
@@ -1105,6 +1142,18 @@
         isMobilePhone
       );
 
+      function setSlide4Translations(visible) {
+        slide4TranslationsShown = !!visible;
+        if (!slide4) return;
+        var items = slide4.querySelectorAll('.slide4-translation');
+        items.forEach(function (el) {
+          el.classList.toggle('opacity-0', !slide4TranslationsShown);
+          el.classList.toggle('-translate-x-2', !slide4TranslationsShown);
+          el.classList.toggle('opacity-100', slide4TranslationsShown);
+          el.classList.toggle('translate-x-0', slide4TranslationsShown);
+        });
+      }
+
       function showSlide(n) {
         if (isReferencesOnly) {
           currentSlide = 3;
@@ -1115,7 +1164,10 @@
           return;
         }
         if (n < 1) n = 1;
-        if (n > 3) n = 3;
+        if (n > 4) n = 4;
+        if (n === 4 && currentSlide !== 4) {
+          setSlide4Translations(false);
+        }
         currentSlide = n;
 
         if (slide1) {
@@ -1130,13 +1182,18 @@
           slide3.classList.toggle('hidden', currentSlide !== 3);
           slide3.classList.toggle('flex', currentSlide === 3);
         }
+        if (slide4) {
+          slide4.classList.toggle('hidden', currentSlide !== 4);
+          slide4.classList.toggle('flex', currentSlide === 4);
+        }
         window.scrollTo(0, 0);
       }
 
       if (isReferencesOnly) {
-        // Completely remove the two photo slides so QR code visitors only ever see and access the references page
+        // Completely remove the lecture slides so QR code visitors only ever see and access the references page
         if (slide1 && slide1.parentNode) slide1.parentNode.removeChild(slide1);
         if (slide2 && slide2.parentNode) slide2.parentNode.removeChild(slide2);
+        if (slide4 && slide4.parentNode) slide4.parentNode.removeChild(slide4);
         showSlide(3);
       } else {
         // On the lecture computer, start on Slide 1 (Photo A)
@@ -1156,6 +1213,11 @@
 
       if (slide1 && !isReferencesOnly) slide1.addEventListener('click', handlePhotoClick);
       if (slide2 && !isReferencesOnly) slide2.addEventListener('click', handlePhotoClick);
+      if (slide4 && !isReferencesOnly) {
+        slide4.addEventListener('click', function () {
+          setSlide4Translations(!slide4TranslationsShown);
+        });
+      }
 
       document.addEventListener('keydown', function (e) {
         if (isReferencesOnly) return;
@@ -1166,18 +1228,28 @@
           if (e.key === 'Escape') qrModal.classList.add('hidden');
           return;
         }
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && currentSlide < 3)) {
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && currentSlide !== 3)) {
           e.preventDefault();
-          showSlide(currentSlide + 1);
+          if (currentSlide === 4 && !slide4TranslationsShown) {
+            setSlide4Translations(true);
+          } else if (currentSlide < 4) {
+            showSlide(currentSlide + 1);
+          }
         } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
           e.preventDefault();
-          showSlide(currentSlide - 1);
+          if (currentSlide === 4 && slide4TranslationsShown) {
+            setSlide4Translations(false);
+          } else {
+            showSlide(currentSlide - 1);
+          }
         } else if (e.key === '1') {
           showSlide(1);
         } else if (e.key === '2') {
           showSlide(2);
         } else if (e.key === '3') {
           showSlide(3);
+        } else if (e.key === '4') {
+          showSlide(4);
         }
       });
 
